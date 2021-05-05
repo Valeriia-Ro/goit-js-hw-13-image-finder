@@ -16,9 +16,13 @@ function onSearch (e) {
    e.preventDefault();
   newApiService.resetPage();
   newApiService.query = e.currentTarget.elements.query.value;
-  newApiService.fetchApiService().then(renderGalleryCard);
+  newApiService.fetchApiService().then(data => {
+    galleryBlock.innerHTML = ''; 
+    renderGalleryCard(data);
+  });
+
   loadBtn.classList.add("load-more");
-  galleryBlock
+  
 }
 
 
