@@ -12,7 +12,7 @@ export default class FetchApiService {
     .then(r=>r.json())
     .then(data => {
         this.page += 1;
-        return data.pictures;
+        return data.hits;
       })
     }
 
